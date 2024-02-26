@@ -1,0 +1,339 @@
+/* Side Navigation */
+/* Animations */
+/* Large Display */
+/* Navbar Window Animation */
+@keyframes fadeInLeft {
+    from {
+      transform: translate3d(-100%, 0, 0);
+    }
+    to {
+      transform: none;
+    }
+  }
+
+  /* Logo Text Animation */
+  @keyframes LogoLoadIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Nav Items Load In */
+  @keyframes NavItemLoadIn {
+    from {
+    transform: translateX(-50%);
+      opacity: 0.4;
+    }
+    to {
+    transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+
+/* Load-In Animation */
+.side__nav__load {
+    animation: fadeInLeft 0.5s forwards;
+}
+
+/* Logo Text Load-In Animation */
+.logo__load {
+    animation: LogoLoadIn 1s forwards;
+}
+
+.link__item__load {
+    animation: NavItemLoadIn 0.5s forwards;
+}
+
+.links__container:nth-child(1) .link__item__load {
+    animation-delay: 0s;
+}
+
+.links__container:nth-child(2) .link__item__load {
+    animation-delay: 0.1s;
+}
+
+.links__container:nth-child(3) .link__item__load {
+    animation-delay: 0.2s;
+}
+
+.links__container:nth-child(4) .link__item__load {
+    animation-delay: 0.3s;
+}
+
+.links__container:nth-child(5) .link__item__load {
+    animation-delay: 0.4s;
+}
+
+.links__container:nth-child(6) .link__item__load {
+    animation-delay: 0.5s;
+}
+
+.links__container:nth-child(7) .link__item__load {
+    animation-delay: 0.6s;
+}
+
+/* Desktop and Tablet Screen Size */
+@media screen and (min-width: 768px) {
+    .side__nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 240px;
+        height: 100%;
+        background-color: #111827;
+        padding: 5px 0;
+        overflow: hidden;
+        transition: ease-in 0.2s;
+      }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        color: #f4f4f4;
+
+        text-decoration: none;
+        padding: 10px 10px;
+        margin-left: 10px;
+        text-align: start;
+        margin-bottom: 20px;
+        gap: 5px;
+    }
+
+    .logo__icon {
+        color: #be123c;
+        font-size: 26px;
+        margin-right: 2.5px;
+        animation: LogoLoadIn 1s forwards;
+    }
+
+    .logo__text {
+        visibility: visible;
+        opacity: 1;
+        font-size: 20px;
+        font-weight: 700;
+        animation: LogoLoadIn 1s forwards;
+    }
+
+    /* Nav Section */
+    @keyframes navTextLoadIn {
+        from {
+            height: auto;
+            opacity: 0;
+        }
+        to {
+            visibility: visible;
+            display: block;
+            opacity: 1;
+            height: auto;
+        }
+    }
+
+    .section__container {
+        padding-left: 12px;
+        padding-right: 24px;
+        margin: 0;
+    }
+
+    .section__header {
+        margin-bottom: 12px;
+        margin-top: 30px;
+        overflow: hidden;
+    }
+
+    .section__title {
+        margin-left: 10px;
+        font-size: 12px;
+        font-weight: 400;
+        color: #9ca3af;
+        opacity: 0;
+        visibility: hidden;
+        height: 15px;
+        animation: navTextLoadIn 0.3s forwards;
+        animation-delay: 0.4s;
+    }
+
+    .section__divider {
+        color: #fff;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        border: 1px solid #030712;
+        margin: 8px 0px;
+        transition: color 0.5s ease;
+    }
+
+    .links__container {
+        margin-bottom: 20px;
+    }
+
+    /* Item Styling */
+    .link__item {
+        display: flex;
+        background-color: #030712;
+        color: #f4f4f4;
+        text-decoration: none;
+        border-radius: 10px;
+        padding: 12px 5px;
+        opacity: 0;
+        transition: background-color 0.3s ease;
+        overflow: hidden;
+    }
+
+    .link__item:hover {
+        background-color: #be123c;
+    }
+
+
+    .link__icon svg {
+        margin: 1px 12px;
+        height: 16px;
+    }
+
+    /* Active Link */
+    .link__item__active {
+        background-color: #be123c;
+    }
+
+    .link__text {
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        font-size: 12px;
+        margin-top: 1px;
+        font-weight: 500;
+        animation: navTextLoadIn 0.5s forwards;
+        animation-delay: 0.4s;
+    }
+
+
+}
+
+/* Mobile Screen Size */
+@media screen and (max-width: 767px){
+    .side__nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 70px;
+        height: 100%;
+        background-color: #111827;
+        padding: 5px 0;
+        overflow: hidden;
+        transition: ease-in 0.2s;
+      }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        color: #f4f4f4;
+        text-decoration: none;
+        padding: 10px 10px;
+        margin-left: 10px;
+        text-align: start;
+        margin-bottom: 20px;
+        gap: 5px;
+    }
+
+    .logo__icon {
+        color: #be123c;
+        font-size: 26px;
+        margin-right: 2.5px;
+        animation: LogoLoadIn 1s forwards;
+    
+    }
+
+    .logo__text {
+        visibility: hidden;
+        opacity: 0;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .section__container {
+        padding-left: 6px;
+        padding-right: 12px;
+        margin: 0;
+    }
+
+    .section__header {
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+
+    .section__title {
+        visibility: hidden;
+        display: none;
+        opacity: 0;
+    }
+
+    .section__divider {
+        color: #fff;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        border: 1px solid #030712;
+        margin-bottom: 12px;
+        transition: color 0.5s ease;
+    }
+
+    .links__container {
+        margin-bottom: 20px;
+    }
+
+    /* Item Styling */
+    .link__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #030712;
+        color: #f4f4f4;
+        font-size: 12px;
+        text-decoration: none;
+        border-radius: 10px;
+        padding: 12px 8px;
+        max-height: 50px;
+        transition: background-color 0.3s ease;
+    }
+
+    .link__item:hover {
+        background-color: #be123c;
+    }
+
+    .link__icon svg {
+        margin: 0px 10px;
+        height: 16px;
+        max-height: 16px;
+    }
+
+    /* Active Link */
+    .link__item__active {
+        background-color: #be123c;
+    }
+
+    @keyframes navTextLoadInSM {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .link__text {
+        display: block;
+        align-items: center;
+        text-align: center;
+        font-size: 7px;
+        font-weight: 500;
+        opacity: 0;
+        animation: navTextLoadInSM 0.5s both;
+        animation-delay: 0.3s;
+    }
+}
+
+
