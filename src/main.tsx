@@ -12,7 +12,12 @@ import  Home  from './pages/HomePage'; // Landing Page
 // Dashboard Pages
 import DashboardLayout  from './pages/dashboard/DashboardLayout'; // Dashboard Layout
 import  Dashboard  from './pages/dashboard/DashboardPage'; // Dashboard Page
-import IncomeAndAssetsPage from './pages/dashboard/IncomeAndAssetsPage'; // Income and Assets Page
+// IIA Pages
+import IIALayout from './pages/dashboard/IIA/incomeAndAssetsLayout';
+import Overview from './pages/dashboard/IIA/overview';
+import Accounts from './pages/dashboard/IIA/accounts';
+import Assets from './pages/dashboard/IIA/assets';
+import Income from './pages/dashboard/IIA/income';
 
 // Not Found Page
 import NotFoundPage from './pages/NotFoundPage';
@@ -34,7 +39,25 @@ const router = createBrowserRouter([
       },
       {
         path: 'income-and-assets',
-        element: <IncomeAndAssetsPage />,
+        element: <IIALayout />,
+        children: [
+          {
+            index: true,
+            element: <Overview />,
+          },
+          {
+            path: 'accounts',
+            element: <Accounts />,
+          },
+          {
+            path: 'assets',
+            element: <Assets />,
+          },
+          {
+            path: 'income',
+            element: <Income />,
+          },
+        ]
       },
 
     ],

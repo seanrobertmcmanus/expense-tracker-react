@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import classes from "../../components/styles/navbar/navBar.module.css";
 
 // Components
@@ -7,9 +6,6 @@ import SideNavItem from "./SideNavItem";
 
 export default function DashSideNav() {
   const [isMounted, setIsMounted] = useState(false); // Used for loading animation
-  const [currentRoute, setCurrentRoute] = useState(""); // Used for active link
-
-  const location = useLocation(); // Used for active link
   // Navigation Links and sections
   const navItems = [
     {
@@ -69,10 +65,6 @@ export default function DashSideNav() {
     setIsMounted(true);
 
   }, []);
-  // Update current route
-  useEffect(() => {
-    setCurrentRoute(location.pathname);
-  }, [location.pathname]);
 
   return (
     <nav className={`${classes.side__nav} `}>
@@ -105,7 +97,6 @@ export default function DashSideNav() {
                       key={`${link.linkName}-${index}`}
                       title={link.linkName}
                       route={link.linkPath}
-                      currentRoute={currentRoute}
                       icon={link.icon}
                     />
                   );
