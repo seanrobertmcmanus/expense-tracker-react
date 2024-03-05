@@ -13,6 +13,8 @@
     .dashboard__page {
         margin-left: 240px;
         transition: margin 0.2s ease-in;
+        background-color: #ffffff;
+        height: 2000px;
     }
 }
 
@@ -21,6 +23,8 @@
         margin-left: 70px;
         transition: margin 0.2s ease-in;
         min-width: 340px;
+        background-color: #ffffff;
+        height: 2000px;
     }
     
 }

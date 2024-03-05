@@ -104,7 +104,7 @@ export default function GroupedSideBarChart({labels, title, dataset, options}:Pr
             {title && <h3 className={`${classes.graphTitle}`}>{title}</h3>}
             {/* Chart */}
             <div className={`${classes.graphContainer}`}>
-                <Bar data={chart_data} options={chartOptions} />
+                <Bar className={`${classes.canvas}`} data={chart_data} options={chartOptions} height={"100%"}  width={"80%"}/>
             </div>
             
         </div>

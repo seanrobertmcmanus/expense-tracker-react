@@ -1,15 +1,25 @@
 .graphCard {
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
+    width: 100%;
     padding: 0.5rem;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
     margin-bottom: 0rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+@media screen and (min-width: 651px) {
+.graphCard {
+    border-radius: 5px;
+}
+}
+
+@media screen and (max-width: 650px) {
+    .graphCard {
+        
+    }
 }
 
 .graphTitle {
@@ -20,12 +30,13 @@
 }
 
 .graphContainer {
-    width: 100% !important; 
-    height: 100% !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100% !important;
 
+}
+
+.canvas {
+    width: 100% !important;
+    height: 10rem !important;
+    padding: 0.5rem 0rem;
 }
 
