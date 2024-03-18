@@ -2,7 +2,8 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
     width: 100%;
-    min-height: 80px;
+    max-width: 250px;
+    min-height: 50px;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     background-color: #374151;
@@ -12,26 +13,29 @@
 .header__container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    gap: 4px 0;
+    align-items: start;
+    padding-bottom: 5px;
+    
 }
 
 .title {
-    font-size: 18px;
-    font-weight: 400;
-
+    font-size: 16px;
+    font-weight: 500;
     color: #ef4444;
 }
 
 .value {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     color: #e5e7eb;
-    padding-bottom: 12px;
+    padding-bottom: 0px;
 }
 
 .button__container {
     display: flex;
-    justify-content: start;
+    justify-content: end;
     align-items: center;
 }
 

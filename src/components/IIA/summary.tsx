@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import classes from "../styles/iia/iiaSummary.module.css";
+import classes from "../styles/cards/iiaSummary.module.css";
 import PieChart from "../charts/pieChart";
 import SimpleGraphicLineChart from "../charts/sg_linechart";
 import type { ChartOptions } from "chart.js";

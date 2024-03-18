@@ -1,0 +1,396 @@
+
+
+/* Max Width */
+@media screen and (min-width: 1000px) {
+    .page__container {  
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .primary__container {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+
+
+    .main__container {
+        margin: 1rem 1rem;
+    }
+
+    
+    .account_management__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 200px;
+        padding: 2px 0rem;
+        margin: 1rem 1rem;
+        
+    }
+
+    .header_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem 0rem;
+        gap: 5px;
+        margin-bottom: 1rem;
+    }
+
+    .graph_balance_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+        height: auto;
+        padding: 2px 0rem;
+    }
+
+    /* Categories Handling */
+    .categories_container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding: 2px 0rem;
+        margin: 1rem 0rem;
+        
+    }
+
+    .categories__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 300px;
+        width: 100%;
+        margin: auto;
+        padding: 2px 0rem;
+        margin-bottom: 1rem;
+        gap: 5px;
+    }
+
+    .categories__title { 
+        font-size: 16px;
+        font-weight: 600;
+        color: #6b7280;
+
+    }
+
+    .categories_items__container {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+        margin: 0rem 0.5rem;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .categories__add_button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 600;
+        width: 56px;
+        height: 28px;
+        padding: 1px 6px;
+        margin: 0.1rem 0px;
+        border-radius: 5px;
+        background-color: #374151;
+        border: 0px solid #374151;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+        transition:  0.3s ease-in-out;
+    }
+
+    .categories__add_button:hover {
+        background-color: #ef4444;
+        color: #fff;
+    }
+
+    .categories__add_button svg {
+        margin-left: 5px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .categories_is_empty_message{ 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 600;
+        color: #374151;
+        padding: 5rem 1rem;
+    
+    }
+
+
+    /* Accounts Table */
+
+    
+}
+
+
+@media screen and (min-width: 651px) and (max-width: 999px) {
+    .page__container {  
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .primary__container {
+        display: grid;
+        grid-template-columns: 3fr;
+    }
+
+
+    .main__container {
+        margin: 1rem 1rem;
+    }
+
+    
+    .account_management__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 200px;
+        padding: 2px 0rem;
+        margin: 1rem 1rem;
+        
+    }
+
+    .header_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem 0rem;
+        gap: 5px;
+        margin-bottom: 1rem;
+    }
+
+    .graph_balance_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+        height: auto;
+        padding: 2px 0rem;
+    }
+
+    /* Categories Handling */
+    .categories_container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding: 2px 0rem;
+        margin: 1rem 0rem;
+        
+    }
+
+    .categories__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 90%;
+        width: 100%;
+        margin: auto;
+        padding: 2px 0rem;
+        margin-bottom: 1rem;
+        gap: 5px;
+    }
+
+    .categories__title { 
+        font-size: 16px;
+        font-weight: 600;
+        color: #6b7280;
+
+    }
+
+    .categories_items__container {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 0.2rem;
+        margin: 0rem 0.5rem;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .categories__add_button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 600;
+        width: 56px;
+        height: 28px;
+        padding: 1px 6px;
+        margin: 0.1rem 0px;
+        border-radius: 5px;
+        background-color: #374151;
+        border: 0px solid #374151;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+        transition:  0.3s ease-in-out;
+    }
+
+    .categories__add_button:hover {
+        background-color: #ef4444;
+        color: #fff;
+    }
+
+    .categories__add_button svg {
+        margin-left: 5px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .categories_is_empty_message{ 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 600;
+        color: #374151;
+        padding: 5rem 1rem;
+    
+    }
+
+
+    /* Accounts */
+}
+
+@media screen and (max-width: 650px) {
+
+    .page__container {  
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .primary__container {
+        display: grid;
+        grid-template-columns: 3fr;
+    }
+
+
+    .main__container {
+        margin: 1rem 1rem;
+    }
+
+    
+    .account_management__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 200px;
+        padding: 2px 0rem;
+        margin: 1rem 1rem;
+        
+    }
+
+    .header_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem 0rem;
+        gap: 5px;
+        margin-bottom: 1rem;
+    }
+
+    .graph_balance_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+        height: auto;
+        padding: 2px 0rem;
+    }
+
+    /* Categories Handling */
+    .categories_container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding: 2px 0rem;
+        margin: 1rem 0rem;
+        
+    }
+
+    .categories__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 90%;
+        width: 100%;
+        margin: auto;
+        padding: 2px 0rem;
+        margin-bottom: 1rem;
+        gap: 5px;
+    }
+
+    .categories__title { 
+        font-size: 16px;
+        font-weight: 600;
+        color: #6b7280;
+
+    }
+
+    .categories_items__container {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 0.2rem;
+        margin: 0rem 0.5rem;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .categories__add_button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 600;
+        width: 56px;
+        height: 28px;
+        padding: 1px 6px;
+        margin: 0.1rem 0px;
+        border-radius: 5px;
+        background-color: #374151;
+        border: 0px solid #374151;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+        transition:  0.3s ease-in-out;
+    }
+
+    .categories__add_button:hover {
+        background-color: #ef4444;
+        color: #fff;
+    }
+
+    .categories__add_button svg {
+        margin-left: 5px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .categories_is_empty_message{ 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 600;
+        color: #374151;
+        padding: 5rem 1rem;
+    
+    }
+    
+    /* Accounts */
+}

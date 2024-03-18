@@ -1,36 +1,43 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
+// Auth
+import AuthProvider from "./utils/AuthProvider";
 // Styles
-import './App.css'
+import "./App.css";
 // Pages
-import  Home  from './pages/HomePage'; // Landing Page
+import Home from "./pages/HomePage"; // Landing Page
+// Auth
+import Login from "./pages/auth/login"; // Login Page
 // Dashboard Pages
-import DashboardLayout  from './pages/dashboard/DashboardLayout'; // Dashboard Layout
-import  Dashboard  from './pages/dashboard/DashboardPage'; // Dashboard Page
+import DashboardLayout from "./pages/dashboard/DashboardLayout"; // Dashboard Layout
+import Dashboard from "./pages/dashboard/DashboardPage"; // Dashboard Page
 // IIA Pages
-import IIALayout from './pages/dashboard/IIA/incomeAndAssetsLayout';
-import Overview from './pages/dashboard/IIA/overview';
-import Accounts from './pages/dashboard/IIA/accounts';
-import Assets from './pages/dashboard/IIA/assets';
-import Income from './pages/dashboard/IIA/income';
+import IIALayout from "./pages/dashboard/IIA/incomeAndAssetsLayout";
+import Overview from "./pages/dashboard/IIA/overview";
+import Accounts from "./pages/dashboard/IIA/accounts";
+import Assets from "./pages/dashboard/IIA/assets";
+import Income from "./pages/dashboard/IIA/income";
 
 // Not Found Page
-import NotFoundPage from './pages/NotFoundPage';
+import NotFoundPage from "./pages/NotFoundPage";
 
 // Application Router
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Home />,
-    errorElement: <NotFoundPage />
+    errorElement: <NotFoundPage />,
   },
   {
-    path: '/dashboard',
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/dashboard",
     element: <DashboardLayout />,
     children: [
       {
@@ -38,7 +45,7 @@ const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: 'income-and-assets',
+        path: "income-and-assets",
         element: <IIALayout />,
         children: [
           {
@@ -46,27 +53,34 @@ const router = createBrowserRouter([
             element: <Overview />,
           },
           {
-            path: 'accounts',
+            path: "accounts",
             element: <Accounts />,
           },
           {
-            path: 'assets',
+            path: "assets",
             element: <Assets />,
           },
           {
-            path: 'income',
+            path: "income",
             element: <Income />,
           },
-        ]
+        ],
       },
-
     ],
-  }
-
+  },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+// Query Client
+const queryClient = new QueryClient();
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>,
-)
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <AuthProvider>
+          <RouterProvider router={router} />
+        </AuthProvider>
+      </Provider>
+    </QueryClientProvider>
+  </React.StrictMode>
+);
