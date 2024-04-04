@@ -5,24 +5,39 @@ import { setIsAuthenticated, setRequireReAuth } from "../redux/utils/authSlice";
 import axios from "../lib/axios";
 import { useNavigate } from "react-router-dom";
 
-type LoginFormData = {
+type SignUpFormData = {
   email: string;
+  first_name: string;
+  last_name: string;
   password: string;
+  re_password: string;
 };
 
-export default function useLogin() {
-  const dispatch = useDispatch();
+export default function useAuthSignup() {
   const queryClient = useQueryClient();
+  const dispatch = useDispatch();
   const redirect = useNavigate();
+
+  // Dev note, when we add in email confirmation
+  // need to add in a step for the confirmation email intead of just authentication
 
   // Form data
   const [email, setEmail] = useState("");
+  const [first_name, setFirstName] = useState("");
+  const [last_name, setLastName] = useState("");
   const [password, setPassword] = useState("");
+  const [re_password, setRePassword] = useState("");
 
-  async function loginRequest() {
+  async function signUpRequest() {
     const response = await axios.post(
-      "/auth/login/",
-      { email: email, password: password },
+      "/auth/create/",
+      {
+        email: email,
+        first_name: first_name,
+        last_name: last_name,
+        password: password,
+        re_password: re_password,
+      },
       {
         headers: {
           "Content-Type": "application/json",
@@ -39,38 +54,40 @@ export default function useLogin() {
     error,
     isPending: isLoading,
   } = useMutation({
-    mutationFn: loginRequest,
+    mutationFn: signUpRequest,
     onMutate: () => {
-      console.log("Logging in");
+      console.log("Signing up");
     },
     onSuccess: (data) => {
       console.log(data);
-      console.log("Logged in");
+      console.log("Signed up");
       dispatch(setIsAuthenticated(true));
       dispatch(setRequireReAuth(false));
       redirect("/dashboard");
     },
     onError: (error) => {
-      console.log("Error logging in");
+      console.log("Error signing up");
       console.log(error);
     },
   });
 
-  const handleLogin = (data: LoginFormData) => {
+  const handleSignUp = (data: SignUpFormData) => {
     setEmail(data.email);
+    setFirstName(data.first_name);
+    setLastName(data.last_name);
     setPassword(data.password);
-    console.log(email);
-    console.log(password);
-    console.log("logging in...");
-    mutate();
+    setRePassword(data.re_password);
+    console.log(data);
+    console.log("signing up...");
+    //mutate();
   };
 
   return {
-    handleLogin,
+    handleSignUp,
     isLoading,
     isError,
     error,
   };
 }
 
-export type { LoginFormData };
+export type { SignUpFormData };

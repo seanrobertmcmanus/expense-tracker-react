@@ -25,6 +25,11 @@ import Income from "./pages/dashboard/IIA/income";
 // Not Found Page
 import NotFoundPage from "./pages/NotFoundPage";
 
+// Style Provider
+import "@mantine/core/styles.css";
+
+import { MantineProvider } from "@mantine/core";
+
 // Application Router
 const router = createBrowserRouter([
   {
@@ -78,7 +83,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
         <AuthProvider>
-          <RouterProvider router={router} />
+          <MantineProvider>
+            <RouterProvider router={router} />
+          </MantineProvider>
         </AuthProvider>
       </Provider>
     </QueryClientProvider>

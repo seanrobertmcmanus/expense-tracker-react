@@ -1,0 +1,28 @@
+.form {
+    margin: auto;
+    width: 75%;
+    height: 100%;
+}
+
+.error__wrapper {
+    margin: auto;
+    width: 50%;
+}
+
+.error_message {
+    color: #ff0000;
+    font-size: 12px;
+    font-weight: 500;
+
+}
+
+.button__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    margin-top: 2.5rem;
+
+}

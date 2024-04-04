@@ -4,7 +4,7 @@ import "../App.css";
 import LoginSignUpModal from "../components/modals/auth/loginSignUpModal";
 
 function Home() {
-  const [openAuthModal, setOpenAuthModal] = useState(false);
+  const [openAuthModal, setOpenAuthModal] = useState(true);
 
   // Auth Modal Handling
   const handleOpenAuthModal = () => {
